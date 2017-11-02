@@ -1,0 +1,34 @@
+<!--
+  Generated template for the Agendamentos page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agendamentos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-list>
+    <ion-item-sliding *ngFor="let agendamento of agendamentos">
+        <ion-item [class.falha]="!agendamento.confirmado">
+        {{ agendamento.carro.nome }} - R${{ agendamento.valor }}
+       
+        </ion-item>
+
+        <ion-item-options side="right">
+            <button ion-button *ngIf="!agendamento.confirmado"  (click)="reenvia(agendamento)">
+                 <ion-icon ios="ios-paper-plane" md="md-paper-plane"></ion-icon>
+            </button>
+        </ion-item-options>
+
+    </ion-item-sliding>
+</ion-list>
+
+</ion-content>
