@@ -3,19 +3,21 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { PerfilPage } from '../pages/perfil/perfil';
 import { AgendamentosPage } from '../pages/agendamentos/agendamentos';
+
 
 @Component({
   templateUrl: 'app.html'
 })
 
 export class MyApp {
-  rootPage = HomePage;
+  rootPage = LoginPage;
 
   public paginas = [ 
-    {
-      titulo: 'Agendamentos', componente : AgendamentosPage
-    }
+    { titulo: 'Agendamentos', componente : AgendamentosPage },
+    { titulo: 'Perfil', componente : PerfilPage }
   ];
 
   //busca tipos nav no template, acessa elementos filhos
